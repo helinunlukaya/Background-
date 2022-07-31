@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>giriş</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            border: none;
+            background: none;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: cornflowerblue;
+        }
+       .form {
+            padding: 20px 40px;
+            width: 350px;
+            background-color: antiquewhite;
+        }
+        .inputBox {
+            padding:20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .inputBox input {
+            border-bottom: 1px solid #222;
+            outline: none;
+            margin: 15px 0;
+            padding: 5px 0;
+            
+        }
+        .inputBox input:focus{
+            border-bottom: 1px solid blue;
+            transition: all 500ms;
+        }
+        button {
+            border:1px solid #333;
+            padding: 15px 0;
+            cursor: pointer;
+        }
+                 </style>
+</head>
+<body>
+   
+        <div class="form">
+            <div class="inputBox">
+                <label for="">K.Adı</label>
+                <input type="text" id="kadi">
+            </div>
+            <div class="inputBox">
+                <label for="">Şifre</label>
+                <input type="password" id="sifre">
+            </div>
+           
+            <div class="inputBox">
+               <button id="giris" type="submit">Giriş</button>
+            </div>
+        </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        
+        $("#giris").click(function(){
+            const kadi = document.getElementById("kadi").value;
+            const pass = document.getElementById("sifre").value;
+            
+         
+                if(kadi=="Ahmet" && pass=="1234"){
+                  window.location.href="home.html";
+                  swal("Good job!", "You clicked the button!", "success");
+                }else{
+                    swal("HATA", "Bilgiler yanlış girildi.", "error");
+                }
+        });
+        
+</script>
+    </script>
+</body>
+</html>
